@@ -5,17 +5,18 @@ import {
   Text,
   ImageBackground,
   TextInput,
+  TouchableOpacity,
   Button,
 } from "react-native";
 
-import { TouchableOpacity } from "react-native-gesture-handler";
+// import { TouchableOpacity } from "react-native-gesture-handler";
 
 export default class Start extends Component {
   constructor(props) {
     super(props);
     this.state = {
       name: "",
-      color: "#333139",
+      color: "#090C08",
     };
   }
 
@@ -26,7 +27,9 @@ export default class Start extends Component {
           source={require("../assets/Background-Image.png")}
           style={styles.backgroundImage}
         >
-          <Text style={styles.titleBox}>Chat App</Text>
+          <View style={styles.titleBoxWrapper}>
+            <Text style={styles.titleBox}>Chat App</Text>
+          </View>
           <View style={styles.box1}>
             <TextInput
               style={[styles.inputBox, styles.smallText]}
@@ -88,9 +91,12 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
-  titleBox: {
+  titleBoxWrapper: {
     flex: 1,
-    paddingTop: "30%",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  titleBox: {
     fontSize: 45,
     fontWeight: "600",
     color: "#FFFFFF",
@@ -103,7 +109,7 @@ const styles = StyleSheet.create({
     height: "40%",
     marginBottom: "5%",
     paddingTop: "5%",
-    paddingBottom: "9%",
+    paddingBottom: "5%",
   },
   inputBox: {
     width: "88%",
@@ -120,14 +126,14 @@ const styles = StyleSheet.create({
     marginLeft: "2%",
   },
   label: {
-    marginBottom: "10%",
+    marginBottom: "5%",
   },
   colors: {
     flexDirection: "row",
-    marginBottom: 1,
+    marginBottom: "5%",
   },
   color: {
-    borderRadius: 50,
+    borderRadius: 20,
     width: 40,
     height: 40,
     marginRight: 42,
@@ -147,7 +153,7 @@ const styles = StyleSheet.create({
   buttonWrapper: {
     width: "88%",
     flex: 1,
-    justifyContent: "center",
+    justifyContent: "flex-end",
   },
   button: {
     height: 50,
@@ -157,6 +163,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     borderRadius: 4,
   },
+
   buttonText: {
     color: "#FFFFFF",
     fontSize: 16,
